@@ -1,0 +1,17 @@
+{
+    "accountAssociation": {
+        "header": "eyJmaWQiOjY1NDYsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgyMWNBOUYwRjdDMGI1OWY2MTZiMUQ5NjMyNWQ1NUI2MmM5NjYxRDZkIn0",
+        "payload": "eyJkb21haW4iOiJ4emliaXQuYXJ0bHUueHl6In0",
+        "signature": "MHhkNTE0ZmNlNjQyNWUyNjhjOWNlYzg0M2Y5MWQ5ZWExMmI5MTVmMGY4ZjJjOGQyN2E4YTY5MDlhY2IwZDFjMWI2NzY3YjYzNzNjZGYyODE1ZDFhMzA3MzM2NGY2ZTk5ZTMxZGYzYWM0NWUxNWYyYTlhZTU4MGY1OGZmNjJhYTNmZDFi"
+    },
+        "frame": {
+        "version": "0.0.1",
+        "name": "Xzibit Frames V2 for Farcaster",
+        "iconUrl": "https://xzibit.artlu.xyz/assets/xzibit-ya-transparent.png",
+        "homeUrl": "https://xzibit.artlu.xyz",
+        "imageUrl": "https://xzibit.artlu.xyz/assets/9i9x7t.jpg", 
+        "buttonTitle": "Launch Frame",
+        "splashImageUrl": "https://xzibit.artlu.xyz/assets/9i9x7t.jpg", 
+        "splashBackgroundColor": "#050709"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "appUrl": "https://xzibit.artlu.xyz",
+    "prodDomain": "xzibit.artlu.xyz",
+    "githubUrl": "https://github.com/artlu99/xzibit-frames-v2.git",
+    "meta": {
+        "title": "Xzibit Frames V2 for Farcaster by @artlu",
+        "description": "Yo dawg, I heard you like frames, so I put a website in your frame, so you can browse while you frame",
+        "name": "Xzibit Frames V2 for Farcaster by @artlu"
+
+    },
+    "button": { "title": "Launch Frame" }
+}
