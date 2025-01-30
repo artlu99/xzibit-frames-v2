@@ -24,7 +24,7 @@ const ClearableInput = forwardRef<HTMLInputElement, ClearableInputProps>(
             onClick={onClear}
             className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
           >
-            <RiCloseLine className="h-4 w-4" />
+            <RiCloseLine className="h-8 w-8 opacity-30" />
             <span className="sr-only">Clear input</span>
           </button>
         )}

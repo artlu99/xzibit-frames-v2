@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "deploy": "npm run build && wrangler pages deploy",
+    "deploy": "npm run build && wrangler pages deploy --branch=production",
     "dev": "remix vite:dev",
     "migrate": "tsx ./scripts/migrator.ts",
     "start": "wrangler pages dev ./build/client",

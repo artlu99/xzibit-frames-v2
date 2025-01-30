@@ -1,4 +1,5 @@
 import { useNavigate } from "@remix-run/react";
+import { RiGithubFill } from "@remixicon/react";
 import { useCallback, useState } from "react";
 import { Button } from "~/components/ui/button";
 import { ClearableInput } from "~/components/ui/clearable-input";
@@ -38,6 +39,15 @@ export const LandingPage = () => {
 
   return isSDKLoaded ? (
     <div>
+      <a
+        href={config.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors duration-200"
+        aria-label="View source on GitHub"
+      >
+        <RiGithubFill className="w-6 h-6" />
+      </a>
       <article className="prose">
         <p className="text-lg font-bold">
           Yo {name},<br />I heard you like Frames
@@ -82,7 +92,7 @@ export const LandingPage = () => {
         )}
       </article>
       {context || DEBUG ? (
-        <div className="fixed bottom-16 right-8">
+        <div className="fixed bottom-12 right-8">
           <img
             src={"/assets/xzibit-ya-transparent.png"}
             alt="Xzibit"
@@ -90,7 +100,7 @@ export const LandingPage = () => {
           />
         </div>
       ) : (
-        <div className="fixed bottom-16 left-8">
+        <div className="fixed bottom-12 left-8">
           <img
             src={"/assets/xzibit-nah-transparent.png"}
             alt="Xzibit"
