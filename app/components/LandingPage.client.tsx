@@ -56,13 +56,30 @@ export const LandingPage = () => {
         {context || DEBUG ? (
           <form onSubmit={handleSubmit} className="space-y-4">
             <ClearableInput
-              type="text"
+              type="url"
               placeholder="Enter URL (e.g., example.com)"
               value={url}
-              onChange={(e) => setUrl(e.target.value)}
+              onChange={(e) => {
+                const inputValue = e.target.value;
+                try {
+                  // Split URL into base and query parts
+                  const [baseUrl, ...queryParts] = inputValue.split("?");
+                  const urlToTest = baseUrl.startsWith("http")
+                    ? baseUrl
+                    : `https://${baseUrl}`;
+
+                  // Validate the base URL
+                  new URL(urlToTest);
+
+                  // Reconstruct the URL with query parameters
+                  setUrl(inputValue);
+                } catch {
+                  // Even if validation fails, still update the input
+                  setUrl(inputValue);
+                }
+              }}
               onClear={() => setUrl("")}
               className="w-full"
-              pattern="^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$"
               required
             />
 

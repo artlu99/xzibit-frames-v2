@@ -40,15 +40,24 @@ export const meta: MetaFunction<LoaderData> = ({ data }) => {
   ];
 };
 
-export async function loader({ params }: LoaderFunctionArgs) {
-  // The '*' parameter will contain everything after the base URL
-  const fullPath = params["*"];
+export async function loader({ params, request }: LoaderFunctionArgs) {
+  // Get base path without query parameters (for OG image fetching)
+  const basePath = params["*"];
 
-  const html = await safeFetch(`https://${fullPath}`);
-  const res2 = html ? await ogs({ html, onlyGetOpenGraphInfo: true }) : null;
-  const imageUrl = res2?.result.ogImage?.[0]?.url ?? `${config.appUrl}/splash.png`;
+  // Get full URL including query parameters (for redirection)
+  const url = new URL(request.url);
+  const fullPathWithParams = basePath + (url.search || "");
 
-  return { fullPath, imageUrl };
+  // Fetch OpenGraph data using only the base path
+  const html = await safeFetch(`https://${basePath}`);
+  const ogData = html ? await ogs({ html, onlyGetOpenGraphInfo: true }) : null;
+  const imageUrl =
+    ogData?.result.ogImage?.[0]?.url ?? `${config.appUrl}/splash.png`;
+
+  return {
+    fullPath: fullPathWithParams, // Return full path with params for redirection
+    imageUrl, // Image URL fetched from base path
+  };
 }
 
 const Component = ({ fullPath }: { fullPath: string | undefined }) => {
