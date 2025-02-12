@@ -6,7 +6,6 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { Toaster } from "~/components/ui/toaster";
 import stylesheet from "./tailwind.css?url";
 
 export const links: LinksFunction = () => [
@@ -24,7 +23,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
-        <Toaster />
         <ScrollRestoration />
         <Scripts />
       </body>

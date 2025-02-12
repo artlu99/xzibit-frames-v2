@@ -9,7 +9,7 @@
   ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "types": ["@remix-run/cloudflare", "vite/client","./app/type/env.d.ts", "./app/type/kysely.d.ts"],
+    "types": ["@remix-run/cloudflare", "vite/client","./app/type/env.d.ts"],
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
